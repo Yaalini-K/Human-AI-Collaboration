@@ -846,7 +846,10 @@ st.markdown(
 # LOAD DATA
 # ============================================================
 
-DATA_PATH = r"C:\Users\MY-HP\Desktop\Human_AI_Collaboration\SPSS Data(1).sav"
+import os
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_PATH = os.path.join(BASE_DIR, "SPSS Data(1).sav")
 
 df, meta = pyreadstat.read_sav(DATA_PATH)
 df.attrs = {}
